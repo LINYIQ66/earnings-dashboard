@@ -1,0 +1,581 @@
+{
+  "meta": {
+    "generated_at": "2026-07-09T12:12:30.555371",
+    "report_date": "2026-07-09",
+    "data_range": {
+      "from": "2026-06-09",
+      "to": "2026-07-19"
+    }
+  },
+  "summary": {
+    "total_reported": 15,
+    "total_upcoming": 12,
+    "beats": 13,
+    "misses": 2,
+    "flat": 0,
+    "beat_rate": 86.7,
+    "miss_rate": 13.3,
+    "avg_surprise": 9.56
+  },
+  "top_beats": [
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies Inc.",
+      "report_date": "2026-05-28",
+      "eps_actual": 4.86,
+      "eps_expected": 2.96,
+      "surprise_pct": 64.19,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:38.472182"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "report_date": "2026-05-27",
+      "eps_actual": 3.88,
+      "eps_expected": 3.13,
+      "surprise_pct": 23.96,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:17.441869"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "report_date": "2026-06-24",
+      "eps_actual": 25.11,
+      "eps_expected": 20.71,
+      "surprise_pct": 21.25,
+      "status": "reported"
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "report_date": "2026-06-10",
+      "eps_actual": 2.11,
+      "eps_expected": 1.96,
+      "surprise_pct": 7.65,
+      "status": "reported"
+    },
+    {
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "report_date": "2026-05-26",
+      "eps_actual": 1.08,
+      "eps_expected": 1.01,
+      "surprise_pct": 6.93,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:40.876028"
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "report_date": "2026-06-02",
+      "eps_actual": 0.85,
+      "eps_expected": 0.8,
+      "surprise_pct": 6.25,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:41.679060"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "report_date": "2026-05-20",
+      "eps_actual": 1.87,
+      "eps_expected": 1.77,
+      "surprise_pct": 5.65,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:13:54.653755"
+    },
+    {
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "report_date": "2026-05-21",
+      "eps_actual": 0.67,
+      "eps_expected": 0.65,
+      "surprise_pct": 3.08,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:09.356939"
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc.",
+      "report_date": "2026-06-03",
+      "eps_actual": 1.1,
+      "eps_expected": 1.07,
+      "surprise_pct": 2.8,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:39.885752"
+    },
+    {
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "report_date": "2026-05-13",
+      "eps_actual": 1.06,
+      "eps_expected": 1.04,
+      "surprise_pct": 1.92,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:19.901986"
+    },
+    {
+      "ticker": "INTU",
+      "name": "Intuit Inc.",
+      "report_date": "2026-05-20",
+      "eps_actual": 12.8,
+      "eps_expected": 12.57,
+      "surprise_pct": 1.83,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:29.020954"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "report_date": "2026-06-03",
+      "eps_actual": 2.44,
+      "eps_expected": 2.4,
+      "surprise_pct": 1.67,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:00.050966"
+    },
+    {
+      "ticker": "HD",
+      "name": "Home Depot, Inc. (The)",
+      "report_date": "2026-05-19",
+      "eps_actual": 3.43,
+      "eps_expected": 3.41,
+      "surprise_pct": 0.59,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:12.339558"
+    }
+  ],
+  "top_misses": [
+    {
+      "ticker": "COST",
+      "name": "Costco Wholesale Corporation",
+      "report_date": "2026-05-28",
+      "eps_actual": 4.93,
+      "eps_expected": 4.97,
+      "surprise_pct": -0.8,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:08.427310"
+    },
+    {
+      "ticker": "SNOW",
+      "name": "Snowflake Inc.",
+      "report_date": "2026-05-27",
+      "eps_actual": -0.86,
+      "eps_expected": -0.83,
+      "surprise_pct": -3.61,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:39.140591"
+    }
+  ],
+  "all_reported": [
+    {
+      "ticker": "DELL",
+      "name": "Dell Technologies Inc.",
+      "report_date": "2026-05-28",
+      "eps_actual": 4.86,
+      "eps_expected": 2.96,
+      "surprise_pct": 64.19,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:38.472182"
+    },
+    {
+      "ticker": "CRM",
+      "name": "Salesforce, Inc.",
+      "report_date": "2026-05-27",
+      "eps_actual": 3.88,
+      "eps_expected": 3.13,
+      "surprise_pct": 23.96,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:17.441869"
+    },
+    {
+      "ticker": "MU",
+      "name": "Micron Technology, Inc.",
+      "report_date": "2026-06-24",
+      "eps_actual": 25.11,
+      "eps_expected": 20.71,
+      "surprise_pct": 21.25,
+      "status": "reported"
+    },
+    {
+      "ticker": "ORCL",
+      "name": "Oracle Corporation",
+      "report_date": "2026-06-10",
+      "eps_actual": 2.11,
+      "eps_expected": 1.96,
+      "surprise_pct": 7.65,
+      "status": "reported"
+    },
+    {
+      "ticker": "ZS",
+      "name": "Zscaler, Inc.",
+      "report_date": "2026-05-26",
+      "eps_actual": 1.08,
+      "eps_expected": 1.01,
+      "surprise_pct": 6.93,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:40.876028"
+    },
+    {
+      "ticker": "PANW",
+      "name": "Palo Alto Networks, Inc.",
+      "report_date": "2026-06-02",
+      "eps_actual": 0.85,
+      "eps_expected": 0.8,
+      "surprise_pct": 6.25,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:41.679060"
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA Corporation",
+      "report_date": "2026-05-20",
+      "eps_actual": 1.87,
+      "eps_expected": 1.77,
+      "surprise_pct": 5.65,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:13:54.653755"
+    },
+    {
+      "ticker": "WMT",
+      "name": "Walmart Inc.",
+      "report_date": "2026-05-21",
+      "eps_actual": 0.67,
+      "eps_expected": 0.65,
+      "surprise_pct": 3.08,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:09.356939"
+    },
+    {
+      "ticker": "CRWD",
+      "name": "CrowdStrike Holdings, Inc.",
+      "report_date": "2026-06-03",
+      "eps_actual": 1.1,
+      "eps_expected": 1.07,
+      "surprise_pct": 2.8,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:39.885752"
+    },
+    {
+      "ticker": "CSCO",
+      "name": "Cisco Systems, Inc.",
+      "report_date": "2026-05-13",
+      "eps_actual": 1.06,
+      "eps_expected": 1.04,
+      "surprise_pct": 1.92,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:19.901986"
+    },
+    {
+      "ticker": "INTU",
+      "name": "Intuit Inc.",
+      "report_date": "2026-05-20",
+      "eps_actual": 12.8,
+      "eps_expected": 12.57,
+      "surprise_pct": 1.83,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:29.020954"
+    },
+    {
+      "ticker": "AVGO",
+      "name": "Broadcom Inc.",
+      "report_date": "2026-06-03",
+      "eps_actual": 2.44,
+      "eps_expected": 2.4,
+      "surprise_pct": 1.67,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:00.050966"
+    },
+    {
+      "ticker": "HD",
+      "name": "Home Depot, Inc. (The)",
+      "report_date": "2026-05-19",
+      "eps_actual": 3.43,
+      "eps_expected": 3.41,
+      "surprise_pct": 0.59,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:12.339558"
+    },
+    {
+      "ticker": "COST",
+      "name": "Costco Wholesale Corporation",
+      "report_date": "2026-05-28",
+      "eps_actual": 4.93,
+      "eps_expected": 4.97,
+      "surprise_pct": -0.8,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:08.427310"
+    },
+    {
+      "ticker": "SNOW",
+      "name": "Snowflake Inc.",
+      "report_date": "2026-05-27",
+      "eps_actual": -0.86,
+      "eps_expected": -0.83,
+      "surprise_pct": -3.61,
+      "status": "reported",
+      "fetched_at": "2026-06-11T00:14:39.140591"
+    }
+  ],
+  "upcoming": [
+    {
+      "ticker": "PEP",
+      "name": "Pepsico, Inc.",
+      "report_date": "2026-07-09",
+      "eps_actual": null,
+      "eps_expected": 2.21,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "JPM",
+      "name": "JP Morgan Chase & Co.",
+      "report_date": "2026-07-14",
+      "eps_actual": null,
+      "eps_expected": 5.61,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "BAC",
+      "name": "Bank of America Corporation",
+      "report_date": "2026-07-14",
+      "eps_actual": null,
+      "eps_expected": 1.11,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "WFC",
+      "name": "Wells Fargo & Company",
+      "report_date": "2026-07-14",
+      "eps_actual": null,
+      "eps_expected": 1.71,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "GS",
+      "name": "GS",
+      "sector": "银行",
+      "report_date": "2026-07-14",
+      "eps_actual": null,
+      "eps_expected": 14.3,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "JNJ",
+      "name": "Johnson & Johnson",
+      "report_date": "2026-07-15",
+      "eps_actual": null,
+      "eps_expected": 2.85,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "MS",
+      "name": "MS",
+      "sector": "银行",
+      "report_date": "2026-07-15",
+      "eps_actual": null,
+      "eps_expected": 2.88,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "UNH",
+      "name": "UnitedHealth Group Incorporated",
+      "report_date": "2026-07-16",
+      "eps_actual": null,
+      "eps_expected": 4.85,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "NFLX",
+      "name": "Netflix, Inc.",
+      "report_date": "2026-07-16",
+      "eps_actual": null,
+      "eps_expected": 0.79,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "GE",
+      "name": "GE Aerospace",
+      "report_date": "2026-07-16",
+      "eps_actual": null,
+      "eps_expected": 1.85,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "ABT",
+      "name": "Abbott Laboratories",
+      "report_date": "2026-07-16",
+      "eps_actual": null,
+      "eps_expected": 1.28,
+      "surprise_pct": null,
+      "status": "upcoming"
+    },
+    {
+      "ticker": "ISRG",
+      "name": "Intuitive Surgical, Inc.",
+      "report_date": "2026-07-16",
+      "eps_actual": null,
+      "eps_expected": 2.5,
+      "surprise_pct": null,
+      "status": "upcoming"
+    }
+  ],
+  "sectors": {
+    "其他": {
+      "count": 15,
+      "beats": 13,
+      "misses": 2,
+      "avg_surprise": 9.56
+    }
+  },
+  "trend": [
+    {
+      "date": "2026-05-13",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-05-19",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-05-20",
+      "count": 2,
+      "beats": 2,
+      "misses": 0
+    },
+    {
+      "date": "2026-05-21",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-05-26",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-05-27",
+      "count": 2,
+      "beats": 1,
+      "misses": 1
+    },
+    {
+      "date": "2026-05-28",
+      "count": 2,
+      "beats": 1,
+      "misses": 1
+    },
+    {
+      "date": "2026-06-02",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-06-03",
+      "count": 2,
+      "beats": 2,
+      "misses": 0
+    },
+    {
+      "date": "2026-06-10",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    },
+    {
+      "date": "2026-06-24",
+      "count": 1,
+      "beats": 1,
+      "misses": 0
+    }
+  ],
+  "market_cap_ranking": [],
+  "watchlist": [
+    "NVDA",
+    "MSFT",
+    "AAPL",
+    "AMZN",
+    "GOOGL",
+    "META",
+    "AVGO",
+    "TSLA",
+    "JPM",
+    "BAC",
+    "WFC",
+    "GS",
+    "MS",
+    "V",
+    "MA",
+    "AXP",
+    "UNH",
+    "JNJ",
+    "ABBV",
+    "LLY",
+    "MRK",
+    "TMO",
+    "ABT",
+    "ISRG",
+    "COST",
+    "WMT",
+    "PG",
+    "KO",
+    "PEP",
+    "MCD",
+    "HD",
+    "DIS",
+    "NFLX",
+    "XOM",
+    "CVX",
+    "GE",
+    "CAT",
+    "LIN",
+    "ORCL",
+    "CRM",
+    "AMD",
+    "CSCO",
+    "IBM",
+    "QCOM",
+    "TXN",
+    "NOW",
+    "INTU",
+    "MU",
+    "SMCI",
+    "DELL",
+    "SNOW",
+    "CRWD",
+    "ZS",
+    "PANW",
+    "SHOP",
+    "VZ",
+    "T",
+    "TMUS",
+    "BRK-B",
+    "PM",
+    "ARM",
+    "PLTR"
+  ]
+}

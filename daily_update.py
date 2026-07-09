@@ -282,7 +282,8 @@ def generate_data_json(results):
     today = dt.date.today()
 
     reported = [r for r in all_data if r["status"] == "reported"]
-    upcoming = [r for r in all_data if r["status"] == "upcoming"]
+    # Only include upcoming from today forward (skip stale upcoming from past dates)
+    upcoming = [r for r in all_data if r["status"] == "upcoming" and r["report_date"] >= today.isoformat()]
 
     # 去重 + 排序
     seen = {}
@@ -294,8 +295,14 @@ def generate_data_json(results):
         seen.values(), key=lambda r: r.get("surprise_pct") or 0, reverse=True
     )
 
+    # 去重 upcoming
+    seen_upcoming = {}
+    for r in upcoming:
+        key = (r["ticker"], r["report_date"])
+        if key not in seen_upcoming:
+            seen_upcoming[key] = r
     upcoming_unique = sorted(
-        upcoming, key=lambda r: r["report_date"]
+        seen_upcoming.values(), key=lambda r: r["report_date"]
     )
 
     beats = [r for r in reported_unique if r.get("surprise_pct") and r["surprise_pct"] > 0]

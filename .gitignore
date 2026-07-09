@@ -14,6 +14,9 @@ company_cache.json
 !db/.gitkeep
 !archive/.gitkeep
 
+# Keep the generated data.json for GitHub Pages
+!reports/data.json
+
 # macOS
 .DS_Store
 
