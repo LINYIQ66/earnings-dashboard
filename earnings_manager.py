@@ -20,7 +20,7 @@ import yfinance as yf
 
 # ── 目录配置 ──
 BASE_DIR = Path.home() / "earnings-data"
-REPORTS_DIR = BASE_DIR / "reports"
+REPORTS_DIR = BASE_DIR / "docs"
 ARCHIVE_DIR = BASE_DIR / "archive"
 DB_DIR = BASE_DIR / "db"
 

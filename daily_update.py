@@ -16,7 +16,7 @@ import yfinance as yf
 # ── 路径配置 ──
 BASE_DIR = Path.home() / "earnings-data"
 DB_DIR = BASE_DIR / "db"
-REPORTS_DIR = BASE_DIR / "reports"
+REPORTS_DIR = BASE_DIR / "docs"
 ARCHIVE_DIR = BASE_DIR / "archive"
 CACHE_FILE = BASE_DIR / "company_cache.json"
 
