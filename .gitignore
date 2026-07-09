@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Data files (large)
+db/*.json
+archive/*.json
+company_cache.json
+
+# But keep a sample
+!db/.gitkeep
+!archive/.gitkeep
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>☕ KOPI 美股财报仪表盘</title>
+<style>
+/* ═══════════════════════════════════════════
+   KOPI Earnings Dashboard — Coffee Theme
+   ═══════════════════════════════════════════ */
+:root {
+  --bg: #0f0f1a;
+  --bg-card: #1a1a2e;
+  --bg-card-hover: #22223a;
+  --bg-input: #16213e;
+  --border: #2a2a4a;
+  --text: #e0e0e0;
+  --text-dim: #8899aa;
+  --text-bright: #ffffff;
+  --blue: #2563eb;
+  --blue-glow: #3b82f6;
+  --gold: #f59e0b;
+  --gold-glow: #fbbf24;
+  --green: #10b981;
+  --red: #ef4444;
+  --green-bg: rgba(16,185,129,0.12);
+  --red-bg: rgba(239,68,68,0.12);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  --transition: 0.2s ease;
+}
+body.light {
+  --bg: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f1f3f5;
+  --bg-input: #f1f3f5;
+  --border: #dee2e6;
+  --text: #212529;
+  --text-dim: #6c757d;
+  --text-bright: #000;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+/* ── Header ── */
+.header{background:linear-gradient(135deg,#16213e 0%,#1a1a2e 50%,#0f0f1a 100%);border-bottom:2px solid var(--border);padding:0 24px;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+.header-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:12px;font-size:1.4em;font-weight:800;color:var(--text-bright);text-decoration:none}
+.logo-icon{font-size:1.5em}
+.logo span{background:linear-gradient(135deg,var(--gold),var(--gold-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn{padding:8px 16px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;font-size:0.9em;transition:all var(--transition);display:flex;align-items:center;gap:6px}
+.btn:hover{background:var(--bg-card-hover);border-color:var(--blue)}
+.btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+.theme-btn{width:40px;height:40px;padding:0;display:flex;align-items:center;justify-content:center;font-size:1.2em;border-radius:50%}
+/* ── Main ── */
+.main{max-width:1400px;margin:0 auto;padding:24px}
+/* ── Hero ── */
+.hero{text-align:center;padding:48px 24px 32px}
+.hero h1{font-size:2.8em;font-weight:900;margin-bottom:8px;background:linear-gradient(135deg,var(--gold),var(--blue-glow));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .subtitle{color:var(--text-dim);font-size:1.1em}
+.hero .date-badge{display:inline-block;margin-top:12px;padding:6px 18px;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;font-size:0.9em;color:var(--text-dim)}
+/* ── Stats Grid ── */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:32px}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;text-align:center;transition:all var(--transition);cursor:default}
+.stat-card:hover{background:var(--bg-card-hover);border-color:var(--blue);transform:translateY(-2px);box-shadow:var(--shadow)}
+.stat-value{font-size:2.4em;font-weight:900;line-height:1.2}
+.stat-label{font-size:0.85em;color:var(--text-dim);margin-top:4px}
+.stat-sub{font-size:0.8em;color:var(--text-dim);margin-top:2px}
+.value-green{color:var(--green)}
+.value-red{color:var(--red)}
+.value-gold{color:var(--gold)}
+.value-blue{color:var(--blue-glow)}
+/* ── Section ── */
+.section{margin-bottom:32px}
+.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:12px}
+.section-title{font-size:1.3em;font-weight:700;color:var(--text-bright);display:flex;align-items:center;gap:8px}
+.section-title .icon{font-size:1.1em}
+.section-badge{font-size:0.75em;padding:4px 10px;border-radius:12px;background:var(--bg-input);color:var(--text-dim)}
+/* ── Controls ── */
+.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.search-input{padding:8px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-input);color:var(--text);font-size:0.9em;width:200px;outline:none;transition:border var(--transition)}
+.search-input:focus{border-color:var(--blue)}
+.filter-btn{padding:6px 14px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--bg-card);color:var(--text);cursor:pointer;font-size:0.85em;transition:all var(--transition)}
+.filter-btn:hover,.filter-btn.active{border-color:var(--blue);background:rgba(37,99,235,0.1)}
+/* ── Table ── */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border);background:var(--bg-card)}
+table{width:100%;border-collapse:collapse}
+th{padding:14px 16px;text-align:left;font-weight:600;font-size:0.8em;text-transform:uppercase;letter-spacing:0.5px;color:var(--text-dim);background:var(--bg-input);border-bottom:2px solid var(--border);cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{color:var(--gold)}
+th .sort-arrow{font-size:0.7em;margin-left:4px;opacity:0.4}
+th.sorted .sort-arrow{opacity:1;color:var(--gold)}
+td{padding:12px 16px;border-bottom:1px solid var(--border);font-size:0.92em;white-space:nowrap}
+tr:hover td{background:var(--bg-card-hover)}
+tr:last-child td{border-bottom:none}
+.ticker-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-weight:700;font-size:0.9em;background:var(--bg-input);color:var(--blue-glow)}
+.surprise-badge{padding:3px 10px;border-radius:12px;font-weight:700;font-size:0.9em}
+.surprise-up{background:var(--green-bg);color:var(--green)}
+.surprise-down{background:var(--red-bg);color:var(--red)}
+.surprise-flat{background:rgba(136,153,170,0.1);color:var(--text-dim)}
+.status-badge{padding:2px 10px;border-radius:10px;font-size:0.8em;font-weight:600}
+.status-reported{background:rgba(37,99,235,0.15);color:var(--blue-glow)}
+.status-upcoming{background:rgba(245,158,11,0.12);color:var(--gold)}
+.sector-tag{font-size:0.82em;color:var(--text-dim);background:var(--bg-input);padding:2px 8px;border-radius:4px}
+/* ── Trend Chart ── */
+.chart-container{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin-bottom:32px}
+.chart-title{font-size:1.1em;font-weight:700;color:var(--text-bright);margin-bottom:16px}
+.chart{display:flex;align-items:flex-end;gap:4px;height:200px;padding:0 4px}
+.chart-bar{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;min-width:32px}
+.chart-bar-inner{width:100%;border-radius:4px 4px 0 0;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;min-height:2px}
+.chart-bar-beat{background:var(--green);width:100%}
+.chart-bar-miss{background:var(--red);width:100%}
+.chart-label{font-size:0.65em;color:var(--text-dim);transform:rotate(-45deg);transform-origin:top left;white-space:nowrap;margin-top:8px}
+.chart-legend{display:flex;gap:16px;margin-bottom:12px;font-size:0.85em}
+.chart-legend span{display:flex;align-items:center;gap:6px}
+.chart-legend-dot{width:10px;height:10px;border-radius:3px}
+/* ── Sector Grid ── */
+.sector-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.sector-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:16px;transition:all var(--transition)}
+.sector-card:hover{background:var(--bg-card-hover);border-color:var(--blue)}
+.sector-name{font-weight:700;color:var(--text-bright);margin-bottom:8px}
+.sector-stat{display:flex;justify-content:space-between;font-size:0.85em;margin-bottom:4px}
+.sector-stat .val{font-weight:600}
+.sector-bar{height:4px;border-radius:2px;background:var(--border);margin-top:8px;overflow:hidden}
+.sector-bar-fill{height:100%;border-radius:2px;transition:width 0.5s ease}
+/* ── Upcoming Timeline ── */
+.timeline{display:flex;flex-direction:column;gap:8px}
+.timeline-item{display:flex;align-items:center;gap:16px;padding:12px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);transition:all var(--transition)}
+.timeline-item:hover{background:var(--bg-card-hover);border-color:var(--gold)}
+.timeline-date{font-weight:700;color:var(--gold);font-size:0.9em;min-width:100px}
+.timeline-ticker{font-weight:700;color:var(--blue-glow);min-width:70px;font-size:0.95em}
+.timeline-name{flex:1;color:var(--text);font-size:0.9em}
+.timeline-eps{color:var(--text-dim);font-size:0.85em}
+/* ── Footer ── */
+.footer{text-align:center;padding:32px 24px;color:var(--text-dim);font-size:0.85em;border-top:1px solid var(--border);margin-top:48px}
+.footer a{color:var(--blue-glow);text-decoration:none}
+.footer a:hover{color:var(--gold)}
+/* ── Loading ── */
+.loading{text-align:center;padding:60px 24px;color:var(--text-dim);font-size:1.1em}
+.loading .spinner{display:inline-block;width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin 0.8s linear infinite;margin-bottom:12px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty-state{text-align:center;padding:40px;color:var(--text-dim)}
+/* ── Responsive ── */
+@media(max-width:768px){
+  .hero h1{font-size:1.8em}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .stat-card{padding:14px}
+  .stat-value{font-size:1.8em}
+  .header-inner{height:56px;padding:0 12px}
+  .logo{font-size:1.1em}
+  .chart{height:140px}
+  table{font-size:0.8em}
+  th,td{padding:8px 10px}
+  .search-input{width:140px}
+}
+/* ── Animations ── */
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.animate-in{animation:fadeIn 0.4s ease forwards}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header">
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <span class="logo-icon">☕</span>
+      KOPI <span>Earnings</span>
+    </a>
+    <div class="header-actions">
+      <button class="btn filter-btn" id="btnAll" onclick="setFilter('all')">全部</button>
+      <button class="btn filter-btn" id="btnBeats" onclick="setFilter('beats')">🟢 超预期</button>
+      <button class="btn filter-btn" id="btnMisses" onclick="setFilter('misses')">🔴 低于预期</button>
+      <button class="btn filter-btn" id="btnUpcoming" onclick="setFilter('upcoming')">📅 待发布</button>
+      <button class="btn theme-btn" id="themeToggle" onclick="toggleTheme()" title="切换深色/浅色模式">🌙</button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main">
+
+  <!-- Hero -->
+  <section class="hero animate-in">
+    <h1>☕ 美股财报仪表盘</h1>
+    <p class="subtitle" id="heroSubtitle">AI 驱动的财报数据追踪 · 实时更新</p>
+    <div class="date-badge" id="dateBadge">加载中...</div>
+  </section>
+
+  <!-- Stats Cards -->
+  <section class="stats-grid animate-in" id="statsGrid">
+    <!-- JS populated -->
+  </section>
+
+  <!-- Trend Chart -->
+  <section class="chart-container animate-in" id="trendSection">
+    <div class="chart-title">📈 财报趋势（近30天）</div>
+    <div class="chart-legend">
+      <span><span class="chart-legend-dot" style="background:var(--green)"></span> 超预期</span>
+      <span><span class="chart-legend-dot" style="background:var(--red)"></span> 低于预期</span>
+    </div>
+    <div class="chart" id="trendChart"></div>
+  </section>
+
+  <!-- Earnings Table -->
+  <section class="section animate-in" id="earningsSection">
+    <div class="section-header">
+      <h2 class="section-title"><span class="icon">📊</span> 财报明细</h2>
+      <div class="controls">
+        <input type="text" class="search-input" id="searchInput" placeholder="🔍 搜索代码或公司..." oninput="renderTable()">
+        <div style="font-size:0.85em;color:var(--text-dim)" id="resultCount"></div>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th onclick="sortTable('ticker')" id="th-ticker">代码 <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('name')" id="th-name">公司 <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('sector')" id="th-sector">行业 <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('report_date')" id="th-date">日期 <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('eps_actual')" id="th-actual">实际EPS <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('eps_expected')" id="th-expected">预期EPS <span class="sort-arrow">↕</span></th>
+            <th onclick="sortTable('surprise_pct')" id="th-surprise">惊喜幅度 <span class="sort-arrow">↕</span></th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr><td colspan="8"><div class="loading"><div class="spinner"></div>加载数据中...</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Sector Breakdown -->
+  <section class="section animate-in" id="sectorSection">
+    <div class="section-header">
+      <h2 class="section-title"><span class="icon">🏭</span> 行业分析</h2>
+      <span class="section-badge">已发布财报</span>
+    </div>
+    <div class="sector-grid" id="sectorGrid"></div>
+  </section>
+
+  <!-- Market Cap Ranking -->
+  <section class="section animate-in" id="mktCapSection" style="display:none">
+    <div class="section-header">
+      <h2 class="section-title"><span class="icon">💰</span> 市值排名 <span style="font-size:0.7em;color:var(--text-dim);font-weight:400">· 已发布公司</span></h2>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>代码</th><th>公司</th><th>市值</th><th>股价</th><th>涨跌</th>
+          </tr>
+        </thead>
+        <tbody id="mktCapBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Upcoming Calendar -->
+  <section class="section animate-in" id="upcomingSection">
+    <div class="section-header">
+      <h2 class="section-title"><span class="icon">📅</span> 即将发布财报</h2>
+      <span class="section-badge" id="upcomingCount"></span>
+    </div>
+    <div class="timeline" id="upcomingTimeline"></div>
+  </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>☕ Powered by <a href="https://kopiaiagent.com" target="_blank">KOPI AI Agent</a> · 数据来源：Yahoo Finance</p>
+  <p style="margin-top:4px">⚠️ 仅供参考，不构成投资建议 · 数据可能有15-20分钟延迟</p>
+  <p style="margin-top:4px;font-size:0.75em" id="footerMeta"></p>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   KOPI Earnings Dashboard — App Logic
+   ═══════════════════════════════════════════ */
+
+// ── State ──
+let DATA = null;
+let currentFilter = 'all';
+let currentSort = { field: 'surprise_pct', dir: 'desc' };
+let theme = localStorage.getItem('kopi-earnings-theme') || 'dark';
+
+// ── Init ──
+document.addEventListener('DOMContentLoaded', () => {
+  applyTheme();
+  loadData();
+});
+
+// ── Theme ──
+function applyTheme() {
+  if (theme === 'light') {
+    document.body.classList.add('light');
+    document.getElementById('themeToggle').textContent = '☀️';
+  } else {
+    document.body.classList.remove('light');
+    document.getElementById('themeToggle').textContent = '🌙';
+  }
+}
+
+function toggleTheme() {
+  theme = theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('kopi-earnings-theme', theme);
+  applyTheme();
+}
+
+// ── Data Loading ──
+async function loadData() {
+  try {
+    // Try local data.json first, then fallback to absolute path
+    const paths = ['data.json', './data.json', '../data.json'];
+    let resp = null;
+    for (const p of paths) {
+      try {
+        resp = await fetch(p);
+        if (resp.ok) break;
+      } catch(e) {}
+    }
+    if (!resp || !resp.ok) throw new Error('Failed to load data.json');
+    DATA = await resp.json();
+    renderAll();
+  } catch(e) {
+    console.error('Data load error:', e);
+    document.getElementById('tableBody').innerHTML =
+      '<tr><td colspan="8"><div class="empty-state">⚠️ 无法加载数据文件 data.json<br><small>请确保已运行 daily_update.py 生成数据</small></div></td></tr>';
+    document.getElementById('statsGrid').innerHTML =
+      '<div class="stat-card"><div class="stat-value" style="color:var(--red)">—</div><div class="stat-label">数据加载失败</div></div>';
+  }
+}
+
+// ── Render All ──
+function renderAll() {
+  if (!DATA) return;
+  renderMeta();
+  renderStats();
+  renderTrend();
+  renderTable();
+  renderSectors();
+  renderMarketCap();
+  renderUpcoming();
+}
+
+function renderMeta() {
+  const m = DATA.meta;
+  document.getElementById('heroSubtitle').textContent =
+    `覆盖 ${DATA.watchlist?.length || 55}+ 只美股 · 数据区间 ${m.data_range.from} ~ ${m.data_range.to}`;
+  document.getElementById('dateBadge').textContent = `📅 生成于 ${m.generated_at?.slice(0,16)?.replace('T',' ')}  |  报告日期 ${m.report_date}`;
+  document.getElementById('footerMeta').textContent =
+    `数据版本: ${m.report_date} · 生成时间: ${m.generated_at}`;
+}
+
+function renderStats() {
+  const s = DATA.summary;
+  const cards = [
+    { value: s.total_reported, label: '已发布财报', color: 'var(--text-bright)', sub: '近30天' },
+    { value: s.beats, label: '超预期', color: 'var(--green)', sub: `${s.beat_rate}%` },
+    { value: s.misses, label: '低于预期', color: 'var(--red)', sub: `${s.miss_rate}%` },
+    { value: s.beat_rate + '%', label: '超预期率', color: s.beat_rate >= 60 ? 'var(--green)' : s.beat_rate >= 45 ? 'var(--gold)' : 'var(--red)', sub: '' },
+    { value: (s.avg_surprise >= 0 ? '+' : '') + s.avg_surprise + '%', label: '平均惊喜', color: s.avg_surprise > 0 ? 'var(--green)' : 'var(--red)', sub: '' },
+    { value: s.total_upcoming, label: '待发布', color: 'var(--gold)', sub: '未来10天' },
+  ];
+  document.getElementById('statsGrid').innerHTML = cards.map(c =>
+    `<div class="stat-card">
+      <div class="stat-value" style="color:${c.color}">${c.value}</div>
+      <div class="stat-label">${c.label}</div>
+      ${c.sub ? `<div class="stat-sub">${c.sub}</div>` : ''}
+    </div>`
+  ).join('');
+}
+
+function renderTrend() {
+  const trend = DATA.trend || [];
+  if (!trend.length) {
+    document.getElementById('trendChart').innerHTML = '<div class="empty-state">暂无趋势数据</div>';
+    return;
+  }
+  const maxVal = Math.max(...trend.map(d => d.count), 1);
+  document.getElementById('trendChart').innerHTML = trend.map(d => {
+    const hPct = (d.count / maxVal * 100).toFixed(1);
+    const beatH = d.count > 0 ? (d.beats / d.count * 100).toFixed(1) : 0;
+    const missH = d.count > 0 ? (d.misses / d.count * 100).toFixed(1) : 0;
+    const label = d.date.slice(5); // MM-DD
+    return `<div class="chart-bar" style="height:100%">
+      <div class="chart-bar-inner" style="height:${hPct}%">
+        <div class="chart-bar-beat" style="height:${beatH}%"></div>
+        <div class="chart-bar-miss" style="height:${missH}%"></div>
+      </div>
+      <div class="chart-label">${label}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Table ──
+function getTableData() {
+  if (!DATA) return [];
+  let data = [];
+  if (currentFilter === 'all') {
+    data = [...(DATA.all_reported || []), ...(DATA.upcoming || [])];
+  } else if (currentFilter === 'beats') {
+    data = DATA.top_beats || [];
+  } else if (currentFilter === 'misses') {
+    data = DATA.top_misses || [];
+  } else if (currentFilter === 'upcoming') {
+    data = DATA.upcoming || [];
+  }
+  return data;
+}
+
+function sortTable(field) {
+  if (currentSort.field === field) {
+    currentSort.dir = currentSort.dir === 'asc' ? 'desc' : 'asc';
+  } else {
+    currentSort.field = field;
+    currentSort.dir = 'desc';
+  }
+  // Update header styling
+  document.querySelectorAll('th').forEach(th => th.classList.remove('sorted'));
+  const thEl = document.getElementById('th-' + field);
+  if (thEl) thEl.classList.add('sorted');
+  renderTable();
+}
+
+function renderTable() {
+  const data = getTableData();
+  const search = (document.getElementById('searchInput')?.value || '').toLowerCase();
+
+  // Filter by search
+  let filtered = data;
+  if (search) {
+    filtered = data.filter(r =>
+      r.ticker.toLowerCase().includes(search) ||
+      (r.name || '').toLowerCase().includes(search) ||
+      (r.sector || '').toLowerCase().includes(search)
+    );
+  }
+
+  // Sort
+  const field = currentSort.field;
+  const dir = currentSort.dir === 'asc' ? 1 : -1;
+  filtered.sort((a, b) => {
+    let va = a[field], vb = b[field];
+    if (va == null) va = field === 'surprise_pct' ? -Infinity : '';
+    if (vb == null) vb = field === 'surprise_pct' ? -Infinity : '';
+    if (typeof va === 'string') return va.localeCompare(vb) * dir;
+    return (va - vb) * dir;
+  });
+
+  document.getElementById('resultCount').textContent = `${filtered.length} 条`;
+
+  if (!filtered.length) {
+    document.getElementById('tableBody').innerHTML =
+      '<tr><td colspan="8"><div class="empty-state">🔍 无匹配结果</div></td></tr>';
+    return;
+  }
+
+  document.getElementById('tableBody').innerHTML = filtered.map(r => {
+    const sur = r.surprise_pct;
+    const surClass = sur > 0 ? 'surprise-up' : sur < 0 ? 'surprise-down' : 'surprise-flat';
+    const surText = sur != null ? `${sur > 0 ? '▲' : sur < 0 ? '▼' : '—'} ${sur > 0 ? '+' : ''}${sur.toFixed(1)}%` : '—';
+    const statusClass = r.status === 'reported' ? 'status-reported' : 'status-upcoming';
+    const statusText = r.status === 'reported' ? '已发布' : '待发布';
+    const act = r.eps_actual != null ? `$${r.eps_actual.toFixed(2)}` : '—';
+    const exp = r.eps_expected != null ? `$${r.eps_expected.toFixed(2)}` : '—';
+    return `<tr>
+      <td><span class="ticker-badge">${r.ticker}</span></td>
+      <td>${r.name || r.ticker}</td>
+      <td><span class="sector-tag">${r.sector || '—'}</span></td>
+      <td>${r.report_date}</td>
+      <td>${act}</td>
+      <td>${exp}</td>
+      <td><span class="surprise-badge ${surClass}">${surText}</span></td>
+      <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Filter Buttons ──
+function setFilter(filter) {
+  currentFilter = filter;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('btn' + filter.charAt(0).toUpperCase() + filter.slice(1))?.classList.add('active');
+  renderTable();
+}
+
+// ── Sectors ──
+function renderSectors() {
+  const sectors = DATA.sectors || {};
+  const entries = Object.entries(sectors).sort((a,b) => b[1].count - a[1].count);
+  if (!entries.length) {
+    document.getElementById('sectorGrid').innerHTML = '<div class="empty-state">暂无行业数据</div>';
+    return;
+  }
+  const maxCount = Math.max(...entries.map(([_,v]) => v.count), 1);
+  document.getElementById('sectorGrid').innerHTML = entries.map(([name, s]) => {
+    const beatRate = s.count > 0 ? (s.beats / s.count * 100).toFixed(0) : 0;
+    const barColor = s.avg_surprise > 0 ? 'var(--green)' : s.avg_surprise < 0 ? 'var(--red)' : 'var(--text-dim)';
+    const barWidth = (s.count / maxCount * 100).toFixed(0);
+    return `<div class="sector-card">
+      <div class="sector-name">${name}</div>
+      <div class="sector-stat"><span>财报数</span><span class="val">${s.count}</span></div>
+      <div class="sector-stat"><span>超预期率</span><span class="val" style="color:${beatRate >= 60 ? 'var(--green)' : beatRate >= 40 ? 'var(--gold)' : 'var(--red)'}">${beatRate}%</span></div>
+      <div class="sector-stat"><span>平均惊喜</span><span class="val" style="color:${s.avg_surprise > 0 ? 'var(--green)' : 'var(--red)'}">${s.avg_surprise > 0 ? '+' : ''}${s.avg_surprise.toFixed(1)}%</span></div>
+      <div class="sector-bar"><div class="sector-bar-fill" style="width:${barWidth}%;background:${barColor}"></div></div>
+    </div>`;
+  }).join('');
+}
+
+// ── Market Cap ──
+function renderMarketCap() {
+  const ranking = DATA.market_cap_ranking || [];
+  if (!ranking.length) {
+    document.getElementById('mktCapSection').style.display = 'none';
+    return;
+  }
+  document.getElementById('mktCapSection').style.display = 'block';
+  document.getElementById('mktCapBody').innerHTML = ranking.map((r, i) => {
+    const mktCap = r.market_cap ? (r.market_cap >= 1e12 ? `$${(r.market_cap/1e12).toFixed(2)}T` : `$${(r.market_cap/1e9).toFixed(1)}B`) : '—';
+    const price = r.price ? `$${r.price.toFixed(2)}` : '—';
+    const change = r.price_change_pct != null ?
+      `<span style="color:${r.price_change_pct >= 0 ? 'var(--green)' : 'var(--red)'}">${r.price_change_pct >= 0 ? '+' : ''}${r.price_change_pct.toFixed(2)}%</span>` : '—';
+    return `<tr>
+      <td>${i+1}</td>
+      <td><span class="ticker-badge">${r.ticker}</span></td>
+      <td>${r.name}</td>
+      <td>${mktCap}</td>
+      <td>${price}</td>
+      <td>${change}</td>
+    </tr>`;
+  }).join('');
+}
+
+// ── Upcoming ──
+function renderUpcoming() {
+  const upcoming = DATA.upcoming || [];
+  document.getElementById('upcomingCount').textContent = `${upcoming.length} 只`;
+  if (!upcoming.length) {
+    document.getElementById('upcomingTimeline').innerHTML = '<div class="empty-state">暂无即将发布的财报</div>';
+    return;
+  }
+  document.getElementById('upcomingTimeline').innerHTML = upcoming.map(r => {
+    const exp = r.eps_expected != null ? `预期 EPS $${r.eps_expected.toFixed(2)}` : '';
+    return `<div class="timeline-item">
+      <div class="timeline-date">📅 ${r.report_date}</div>
+      <div class="timeline-ticker">${r.ticker}</div>
+      <div class="timeline-name">${r.name || r.ticker}</div>
+      <div class="timeline-eps">${exp}</div>
+    </div>`;
+  }).join('');
+}
+
+// ── Keyboard Shortcuts ──
+document.addEventListener('keydown', (e) => {
+  if (e.key === '/' && document.activeElement !== document.getElementById('searchInput')) {
+    e.preventDefault();
+    document.getElementById('searchInput')?.focus();
+  }
+  if (e.key === 'Escape') {
+    document.getElementById('searchInput')?.blur();
+  }
+});
+</script>
+
+</body>
+</html>
