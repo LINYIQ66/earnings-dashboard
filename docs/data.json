@@ -1,21 +1,21 @@
 {
   "meta": {
-    "generated_at": "2026-07-09T12:12:30.555371",
-    "report_date": "2026-07-09",
+    "generated_at": "2026-07-10T12:02:35.999927",
+    "report_date": "2026-07-10",
     "data_range": {
-      "from": "2026-06-09",
-      "to": "2026-07-19"
+      "from": "2026-06-10",
+      "to": "2026-07-20"
     }
   },
   "summary": {
-    "total_reported": 15,
-    "total_upcoming": 12,
+    "total_reported": 16,
+    "total_upcoming": 11,
     "beats": 13,
-    "misses": 2,
+    "misses": 3,
     "flat": 0,
-    "beat_rate": 86.7,
-    "miss_rate": 13.3,
-    "avg_surprise": 9.56
+    "beat_rate": 81.2,
+    "miss_rate": 18.8,
+    "avg_surprise": 8.93
   },
   "top_beats": [
     {
@@ -148,6 +148,19 @@
     }
   ],
   "top_misses": [
+    {
+      "ticker": "PEP",
+      "name": "PEP",
+      "sector": "消费品",
+      "report_date": "2026-07-09",
+      "eps_actual": 2.2,
+      "eps_expected": 2.21,
+      "surprise_pct": -0.45,
+      "status": "reported",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
     {
       "ticker": "COST",
       "name": "Costco Wholesale Corporation",
@@ -299,6 +312,19 @@
       "fetched_at": "2026-06-11T00:14:12.339558"
     },
     {
+      "ticker": "PEP",
+      "name": "PEP",
+      "sector": "消费品",
+      "report_date": "2026-07-09",
+      "eps_actual": 2.2,
+      "eps_expected": 2.21,
+      "surprise_pct": -0.45,
+      "status": "reported",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
       "ticker": "COST",
       "name": "Costco Wholesale Corporation",
       "report_date": "2026-05-28",
@@ -320,15 +346,6 @@
     }
   ],
   "upcoming": [
-    {
-      "ticker": "PEP",
-      "name": "Pepsico, Inc.",
-      "report_date": "2026-07-09",
-      "eps_actual": null,
-      "eps_expected": 2.21,
-      "surprise_pct": null,
-      "status": "upcoming"
-    },
     {
       "ticker": "JPM",
       "name": "JP Morgan Chase & Co.",
@@ -443,6 +460,12 @@
       "beats": 13,
       "misses": 2,
       "avg_surprise": 9.56
+    },
+    "消费品": {
+      "count": 1,
+      "beats": 0,
+      "misses": 1,
+      "avg_surprise": -0.45
     }
   },
   "trend": [
@@ -511,6 +534,12 @@
       "count": 1,
       "beats": 1,
       "misses": 0
+    },
+    {
+      "date": "2026-07-09",
+      "count": 1,
+      "beats": 0,
+      "misses": 1
     }
   ],
   "market_cap_ranking": [],
