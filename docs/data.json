@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated_at": "2026-07-11T12:02:18.986659",
-    "report_date": "2026-07-11",
+    "generated_at": "2026-07-12T12:01:45.328045",
+    "report_date": "2026-07-12",
     "data_range": {
-      "from": "2026-06-11",
-      "to": "2026-07-21"
+      "from": "2026-06-12",
+      "to": "2026-07-22"
     }
   },
   "summary": {
     "total_reported": 16,
-    "total_upcoming": 11,
+    "total_upcoming": 18,
     "beats": 13,
     "misses": 3,
     "flat": 0,
@@ -25,8 +25,7 @@
       "eps_actual": 4.86,
       "eps_expected": 2.96,
       "surprise_pct": 64.19,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:38.472182"
+      "status": "reported"
     },
     {
       "ticker": "CRM",
@@ -35,8 +34,7 @@
       "eps_actual": 3.88,
       "eps_expected": 3.13,
       "surprise_pct": 23.96,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:17.441869"
+      "status": "reported"
     },
     {
       "ticker": "MU",
@@ -63,8 +61,7 @@
       "eps_actual": 1.08,
       "eps_expected": 1.01,
       "surprise_pct": 6.93,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:40.876028"
+      "status": "reported"
     },
     {
       "ticker": "PANW",
@@ -73,8 +70,7 @@
       "eps_actual": 0.85,
       "eps_expected": 0.8,
       "surprise_pct": 6.25,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:41.679060"
+      "status": "reported"
     },
     {
       "ticker": "NVDA",
@@ -83,8 +79,7 @@
       "eps_actual": 1.87,
       "eps_expected": 1.77,
       "surprise_pct": 5.65,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:13:54.653755"
+      "status": "reported"
     },
     {
       "ticker": "WMT",
@@ -93,8 +88,7 @@
       "eps_actual": 0.67,
       "eps_expected": 0.65,
       "surprise_pct": 3.08,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:09.356939"
+      "status": "reported"
     },
     {
       "ticker": "CRWD",
@@ -103,8 +97,7 @@
       "eps_actual": 1.1,
       "eps_expected": 1.07,
       "surprise_pct": 2.8,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:39.885752"
+      "status": "reported"
     },
     {
       "ticker": "CSCO",
@@ -123,8 +116,7 @@
       "eps_actual": 12.8,
       "eps_expected": 12.57,
       "surprise_pct": 1.83,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:29.020954"
+      "status": "reported"
     },
     {
       "ticker": "AVGO",
@@ -133,8 +125,7 @@
       "eps_actual": 2.44,
       "eps_expected": 2.4,
       "surprise_pct": 1.67,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:00.050966"
+      "status": "reported"
     },
     {
       "ticker": "HD",
@@ -143,8 +134,7 @@
       "eps_actual": 3.43,
       "eps_expected": 3.41,
       "surprise_pct": 0.59,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:12.339558"
+      "status": "reported"
     }
   ],
   "top_misses": [
@@ -168,8 +158,7 @@
       "eps_actual": 4.93,
       "eps_expected": 4.97,
       "surprise_pct": -0.8,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:08.427310"
+      "status": "reported"
     },
     {
       "ticker": "SNOW",
@@ -178,8 +167,7 @@
       "eps_actual": -0.86,
       "eps_expected": -0.83,
       "surprise_pct": -3.61,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:39.140591"
+      "status": "reported"
     }
   ],
   "all_reported": [
@@ -190,8 +178,7 @@
       "eps_actual": 4.86,
       "eps_expected": 2.96,
       "surprise_pct": 64.19,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:38.472182"
+      "status": "reported"
     },
     {
       "ticker": "CRM",
@@ -200,8 +187,7 @@
       "eps_actual": 3.88,
       "eps_expected": 3.13,
       "surprise_pct": 23.96,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:17.441869"
+      "status": "reported"
     },
     {
       "ticker": "MU",
@@ -228,8 +214,7 @@
       "eps_actual": 1.08,
       "eps_expected": 1.01,
       "surprise_pct": 6.93,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:40.876028"
+      "status": "reported"
     },
     {
       "ticker": "PANW",
@@ -238,8 +223,7 @@
       "eps_actual": 0.85,
       "eps_expected": 0.8,
       "surprise_pct": 6.25,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:41.679060"
+      "status": "reported"
     },
     {
       "ticker": "NVDA",
@@ -248,8 +232,7 @@
       "eps_actual": 1.87,
       "eps_expected": 1.77,
       "surprise_pct": 5.65,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:13:54.653755"
+      "status": "reported"
     },
     {
       "ticker": "WMT",
@@ -258,8 +241,7 @@
       "eps_actual": 0.67,
       "eps_expected": 0.65,
       "surprise_pct": 3.08,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:09.356939"
+      "status": "reported"
     },
     {
       "ticker": "CRWD",
@@ -268,8 +250,7 @@
       "eps_actual": 1.1,
       "eps_expected": 1.07,
       "surprise_pct": 2.8,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:39.885752"
+      "status": "reported"
     },
     {
       "ticker": "CSCO",
@@ -288,8 +269,7 @@
       "eps_actual": 12.8,
       "eps_expected": 12.57,
       "surprise_pct": 1.83,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:29.020954"
+      "status": "reported"
     },
     {
       "ticker": "AVGO",
@@ -298,8 +278,7 @@
       "eps_actual": 2.44,
       "eps_expected": 2.4,
       "surprise_pct": 1.67,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:00.050966"
+      "status": "reported"
     },
     {
       "ticker": "HD",
@@ -308,8 +287,7 @@
       "eps_actual": 3.43,
       "eps_expected": 3.41,
       "surprise_pct": 0.59,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:12.339558"
+      "status": "reported"
     },
     {
       "ticker": "PEP",
@@ -331,8 +309,7 @@
       "eps_actual": 4.93,
       "eps_expected": 4.97,
       "surprise_pct": -0.8,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:08.427310"
+      "status": "reported"
     },
     {
       "ticker": "SNOW",
@@ -341,8 +318,7 @@
       "eps_actual": -0.86,
       "eps_expected": -0.83,
       "surprise_pct": -3.61,
-      "status": "reported",
-      "fetched_at": "2026-06-11T00:14:39.140591"
+      "status": "reported"
     }
   ],
   "upcoming": [
@@ -452,6 +428,97 @@
       "eps_expected": 2.5,
       "surprise_pct": null,
       "status": "upcoming"
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "GOOGL",
+      "sector": "互联网",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 2.89,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "TSLA",
+      "name": "TSLA",
+      "sector": "汽车/能源",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 0.5,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "IBM",
+      "name": "IBM",
+      "sector": "IT服务",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 3.02,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "TXN",
+      "name": "TXN",
+      "sector": "半导体",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 1.92,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "NOW",
+      "name": "NOW",
+      "sector": "软件/云",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 0.86,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "T",
+      "name": "T",
+      "sector": "电信",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 0.59,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "PM",
+      "name": "PM",
+      "sector": "消费品",
+      "report_date": "2026-07-22",
+      "eps_actual": null,
+      "eps_expected": 2.06,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
     }
   ],
   "sectors": {
