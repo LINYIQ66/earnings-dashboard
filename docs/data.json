@@ -1,15 +1,15 @@
 {
   "meta": {
-    "generated_at": "2026-07-13T12:02:17.605693",
-    "report_date": "2026-07-13",
+    "generated_at": "2026-07-14T12:02:50.224659",
+    "report_date": "2026-07-14",
     "data_range": {
-      "from": "2026-06-13",
-      "to": "2026-07-23"
+      "from": "2026-06-14",
+      "to": "2026-07-24"
     }
   },
   "summary": {
     "total_reported": 16,
-    "total_upcoming": 20,
+    "total_upcoming": 22,
     "beats": 13,
     "misses": 3,
     "flat": 0,
@@ -540,6 +540,32 @@
       "report_date": "2026-07-23",
       "eps_actual": null,
       "eps_expected": 2.58,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "AXP",
+      "name": "AXP",
+      "sector": "支付",
+      "report_date": "2026-07-24",
+      "eps_actual": null,
+      "eps_expected": 4.4,
+      "surprise_pct": null,
+      "status": "upcoming",
+      "market_cap": null,
+      "price": null,
+      "price_change_pct": null
+    },
+    {
+      "ticker": "VZ",
+      "name": "VZ",
+      "sector": "电信",
+      "report_date": "2026-07-24",
+      "eps_actual": null,
+      "eps_expected": 1.27,
       "surprise_pct": null,
       "status": "upcoming",
       "market_cap": null,
